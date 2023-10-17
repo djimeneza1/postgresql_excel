@@ -6,6 +6,8 @@ import datetime
 import psycopg2
 from sqlalchemy import create_engine
 
+
+
 class check_archives_in_path():
 
     def __init__(self,final_path):
@@ -60,7 +62,13 @@ class copy_excel_data():
 
             for j in range( self.startCol, self.endCol+1, 1):
 
-                rowSelected.append( wb_sheet_copy.cell(row = i, column = j).value)
+                if wb_sheet_copy.cell(row = i, column = j).value != None:
+
+                    rowSelected.append( wb_sheet_copy.cell(row = i, column = j).value)
+
+                else:
+
+                    rowSelected.append( 0 )
 
             self.rangeSelected.append(rowSelected)
 
@@ -166,3 +174,11 @@ class create_timestamp_for_dataframe():
         self.array_ones_df = np.ones( [self.days*24*4, 1] )
 
         return self.array_ones_df
+
+    def create_range_arrays(self):
+
+        self.array_range_df = []
+        for i in range(1,self.days*24*4+1):
+            self.array_range_df.append([i])
+
+        return self.array_range_df

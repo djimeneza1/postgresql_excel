@@ -3,6 +3,6 @@ import time
 
 while True:
     pyautogui.press('volumedown')
-    time.sleep(1)
+    time.sleep(10)
     pyautogui.press('volumeup')
-    time.sleep(5)
+    time.sleep(50)

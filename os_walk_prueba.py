@@ -9,12 +9,12 @@ import numpy as np
 
 print('###############')
 
-path_root='/config/workspace/proyecto_oswalk/root_inicio'
+path_root='/config/workspace/root_inicio'
 path_client='/'+'ENOSA'
 path_year='/'+'2022'
-path_month= '/'+'04_2022'
+path_month= '/'+'11_2022'
 
-path_archive_data='/'+'042022_ENG_DC'
+path_archive_data='/'+'112022_ENG_DC'
 
 path_final=path_root+path_client+path_year+path_month
 print(path_final+path_archive_data)
@@ -24,7 +24,8 @@ os.chdir(path_final+path_archive_data)
 for root, dirs, files in os.walk('.', topdown = False):
     for name in files:
         data.append(name)
-print(data)
+        print(name)
+#print(data)
 
 '''
 dict_med_lib_enosa={}
@@ -50,7 +51,7 @@ for ii in data:
             break
     dict_verificar[ii]=verif
     
-print(dict_verificar)
+#print(dict_verificar)
 
 print('###############')
 
@@ -65,4 +66,4 @@ for ii in archivos:
             break
     dict_verificar_1[ii]=verif
 
-print(dict_verificar_1)
+#rint(dict_verificar_1)
